@@ -185,7 +185,7 @@ impl Contract {
 
         let required_storage_in_bytes = env::storage_usage() - initial_storage_usage;
 
-        reward_user(required_storage_in_bytes);
+        reward_user(required_storage_in_bytes, account_id);
     }
 
     pub fn submissions_for_account(

@@ -24,7 +24,7 @@ pub(crate) fn refund_deposit(storage_used: u64) {
     }
 }
 
-pub(crate) fn reward_user(storage_used: u64) {
+pub(crate) fn reward_user(storage_used: u64, account_id: AccountId) {
     let required_cost = env::storage_byte_cost() * Balance::from(storage_used);
     let attached_deposit = env::attached_deposit();
     assert!(
@@ -32,8 +32,6 @@ pub(crate) fn reward_user(storage_used: u64) {
         "Must attach {} yoctoNEAR to cover storage",
         required_cost,
     );
-    let refund = attached_deposit - required_cost + 1;
-    if refund > 1 {
-        Promise::new(env::predecessor_account_id()).transfer(refund);
-    }
+    let reward = attached_deposit - required_cost + 5;
+    Promise::new(account_id).transfer(reward);
 }

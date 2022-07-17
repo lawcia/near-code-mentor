@@ -183,7 +183,7 @@ impl Contract {
 
         let amount: u128 = 1_000_000_000_000_000_000_000_000; // 1 $NEAR as yoctoNEAR
 
-        Promise::new(account_id).transfer(amount)
+        Promise::new(account_id).transfer(amount).as_return()
     }
 
     pub fn submissions_for_account(

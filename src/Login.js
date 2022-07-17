@@ -5,7 +5,7 @@ import { SMART_CONTRACT } from "./near/config";
 const Login = () => {
   return (
     <>
-      <h3>Please login to continue.</h3>
+      <h3>Please login to your NEAR account to continue.</h3>
       <button
         className="btn btn-success"
         onClick={() => window.walletConnection.requestSignIn(SMART_CONTRACT)}

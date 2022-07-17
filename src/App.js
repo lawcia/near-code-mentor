@@ -19,7 +19,7 @@ const App = () => {
         ) : (
           <>
             <h2>
-              This is a platform for women to exchange NEAR for code reviews from mentors in Tech.
+              This is a platform for women to get code reviews from mentors in Tech.
             </h2>
             <Login />
           </>

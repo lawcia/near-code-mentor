@@ -1,0 +1,14 @@
+#content {
+    margin: 20px 30px;
+    padding-bottom: 2.5rem;
+}
+
+.title-image {
+    width: 100%;
+    aspect-ratio: auto;
+    margin: 20px 0px;
+}
+
+.title, small {
+    color: #198754;
+}

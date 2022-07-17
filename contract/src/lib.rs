@@ -150,8 +150,10 @@ impl Contract {
         comment_meta: CommentMeta,
         submission_id: SubmissionId,
         account_id: AccountId,
-    ) -> Promise {
+    ) {
         let signer_account_id = env::signer_account_id();
+
+        let initial_storage_usage = env::storage_usage();
 
         assert!(account_id == signer_account_id, 
             "Signer account ID should match account_id in payload");    
@@ -181,9 +183,9 @@ impl Contract {
 
         self.comments_per_submission.insert(&submission_id, &comments_set);
 
-        let amount: u128 = 1_000_000_000_000_000_000_000_000; // 1 $NEAR as yoctoNEAR
+        let required_storage_in_bytes = env::storage_usage() - initial_storage_usage;
 
-        Promise::new(account_id).transfer(amount).as_return()
+        reward_user(required_storage_in_bytes);
     }
 
     pub fn submissions_for_account(

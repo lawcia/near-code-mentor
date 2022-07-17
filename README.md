@@ -3,7 +3,7 @@ Website allows women to create amd receive code reviews. Get rewarded in NEAR.
 
 Backend is hosted on the NEAR testnet 
 
-Frontend is hosted on Netlify
+Frontend is hosted on Netlify https://near-code-mentor.netlify.app/
 
 ## Tech
 - rust

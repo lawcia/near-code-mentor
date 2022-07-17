@@ -19,5 +19,5 @@ export const config = {
 })(window);
 
 
-export const SMART_CONTRACT = "code_mentor.code_mentor.testnet";
+export const SMART_CONTRACT = process.env.REACT_APP_SMART_CONTRACT || "code_mentor.code_mentor.testnet";
 export const APP_KEY_PREFIX = "code_mentor";
